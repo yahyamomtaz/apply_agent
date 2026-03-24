@@ -76,7 +76,7 @@ phd-agent/
 **1. Clone and install dependencies**
 
 ```bash
-git clone https://github.com/yourname/phd-agent.git
+git clone https://github.com/yahyamomtaz/apply_agent.git
 cd phd-agent
 pip install langchain-anthropic langgraph playwright beautifulsoup4 \
             pypdf2 openpyxl requests chromadb sentence-transformers tenacity python-dotenv
@@ -215,9 +215,3 @@ Local `all-MiniLM-L6-v2` via `sentence-transformers` — no external API, no cos
 - Rephrasy API free tier has character limits — falls back gracefully to un-humanized text
 - Claude Sonnet rate limits on free/low-tier API keys may slow down runs with large CVs or descriptions
 - `match_score_position` calls Claude directly (not via tool loop) so it counts against the same rate limit
-
----
-
-## License
-
-MIT
