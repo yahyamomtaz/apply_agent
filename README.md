@@ -1,6 +1,6 @@
 # PhD Application Agent
 
-A multi-agent AI pipeline that scrapes PhD positions, scores how well your CV matches them, and generates tailored cover letter sections — powered by Claude and LangGraph.
+A multi-agent AI agent that scrapes PhD positions, scores how well your CV matches them, and generates an accurate cover letter based on your experiences.
 
 ---
 
