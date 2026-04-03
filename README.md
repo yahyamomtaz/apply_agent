@@ -8,11 +8,11 @@ A multi-agent AI agent that scrapes PhD positions, scores how well your CV match
 
 <img src="agent-architecture.png" width="600" alt="Architecture Diagram"/>
 
-**Supervisor** pre-extracts the CV from PDF directly into `SharedState` before anything else runs. This avoids a subtle but critical bug: embedding raw CV text inside a JSON string (as the scraper's final response) breaks `json.loads` on newlines and special characters like ligatures. The CV travels PDF → SharedState → Writer, never through JSON.
+**Supervisor** pre-extracts the CV from PDF directly into `SharedState` before anything else runs.
 
-**Scraper Agent** runs its own internal ReAct loop with 4 tools. When done, it returns a compact JSON containing only safe string fields (title, university, description, requirements, score). It writes to `phd_positions.xlsx` with colour-coded match scores.
+**Scraper Agent** runs its own internal ReAct loop with 4 tools. When done, it returns a compact JSON containing only safe string fields (title, university, description, requirements, score).
 
-**Writer Agent** runs its own internal ReAct loop with 5 tools. It queries ChromaDB for semantically similar past cover letters, uses them as style context, generates 2–3 tailored paragraphs, humanizes via Rephrasy API, saves to a `.txt` file, and stores the result back in ChromaDB for future retrieval.
+**Writer Agent** runs its own internal ReAct loop with 5 tools.
 
 ---
 
@@ -58,7 +58,7 @@ playwright install chromium
 
 ```env
 ANTHROPIC_API_KEY=sk-ant-...
-REPHRASY_API_KEY=...          # optional — humanizer falls back gracefully if missing
+REPHRASY_API_KEY=...          # optional — humanizer falls back if missing
 ```
 
 **3. Place your CV**
