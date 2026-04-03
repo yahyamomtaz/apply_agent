@@ -128,22 +128,22 @@ RAG store : 3 past letter(s)
 Output    : phd_position_nlp_cover_letter.txt
 ════════════════════════════════════════════════════════
 
-🎯 SUPERVISOR — dispatching to Scraper Agent
-📄 Supervisor pre-loaded CV (4821 chars)
+SUPERVISOR — dispatching to Scraper Agent
+Supervisor pre-loaded CV (4821 chars)
 
-🕷️  SCRAPER AGENT
-🌐 Fetching: https://...
-📊 Scoring match for: PhD in NLP...
-✅ Match score: 78/100 — Excellent Match
+SCRAPER AGENT
+Fetching: https://...
+Scoring match for: PhD in NLP...
+Match score: 78/100 — Excellent Match
 
-🎯 SUPERVISOR — score 78/100 ≥ 50, dispatching to Writer Agent
+SUPERVISOR — score 78/100 ≥ 50, dispatching to Writer Agent
 
-✍️  WRITER AGENT
-🔍 Retrieving similar letters...   (3 found, top similarity 88.4%)
-✍️  Generating cover letter (with RAG)...
-🔥 Humanizing...
-✅ Cover letter saved to: phd_position_nlp_cover_letter.txt
-📥 Stored in RAG (total: 4 letters)
+WRITER AGENT
+Retrieving similar letters...   (3 found, top similarity 88.4%)
+Generating cover letter (with RAG)...
+Humanizing...
+Cover letter saved to: phd_position_nlp_cover_letter.txt
+Stored in RAG (total: 4 letters)
 
 ════════════════════════════════════════════════════════
 📋 FINAL SUMMARY
