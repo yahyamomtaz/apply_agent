@@ -6,36 +6,7 @@ A multi-agent AI agent that scrapes PhD positions, scores how well your CV match
 
 ## How it works
 
-```
-CLI Input (--url, --cv)
-        │
-        ▼
-  ┌─────────────┐
-  │  Supervisor │  pre-loads CV text into SharedState
-  └──────┬──────┘
-         │
-         ▼
-  ┌──────────────┐
-  │ Scraper Agent│  fetch → score → save to Excel
-  └──────┬───────┘
-         │
-    match_score ≥ 50?
-    ┌────┴──────────────┐
-   YES                  NO
-    │                   │
-    ▼                   ▼
-┌──────────────┐   end_node
-│ Writer Agent │◄──────────── retrieve similar letters
-│              │──────────── store generated letter
-└──────┬───────┘      │
-       │        ┌─────┴──────┐
-       │        │  ChromaDB  │
-       │        │ (RAG store)│
-       │        └────────────┘
-       ▼
-   end_node
-   (cover letter saved)
-```
+<img src="agent-architecture.png" width="600" alt="Architecture Diagram"/>
 
 **Supervisor** pre-extracts the CV from PDF directly into `SharedState` before anything else runs. This avoids a subtle but critical bug: embedding raw CV text inside a JSON string (as the scraper's final response) breaks `json.loads` on newlines and special characters like ligatures. The CV travels PDF → SharedState → Writer, never through JSON.
 
